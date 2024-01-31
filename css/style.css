@@ -33,6 +33,7 @@ ul {
 .textEl {
   flex-grow: 1;
   text-align: start;
+  cursor: pointer;
 }
 .fa-solid {
   padding: 5px;

@@ -48,8 +48,13 @@ const app = createApp({
       this.tasks.push(newTaskCopy);
       this.newTask.text = "";
     },
+    changeState(currentTask) {
+      this.tasks[currentTask].state = !this.tasks[currentTask].state;
+    },
   },
-  mounted() {},
+  mounted() {
+    this.$refs.inputText.focus();
+  },
 });
 
 app.mount("#root");

@@ -38,9 +38,11 @@
         <div class="input-group mb-3">
           <input
             v-model.trim="newTask.text"
+            @keyup.enter="addTask()"
             type="text"
             class="input-text"
             placeholder="Aggiungi un promemoria"
+            ref="inputText"
           />
           <button
             @click="addTask()"
@@ -53,8 +55,14 @@
       </section>
       <ul>
         <li v-for="(task,index) in tasks" class="toDoEl">
-          <div v-if="!task.state" class="textEl">{{task.text}}</div>
-          <div v-else="task.state" class="textEl text-decoration-line-through">
+          <div v-if="!task.state" @click="changeState(index)" class="textEl">
+            {{task.text}}
+          </div>
+          <div
+            v-else="task.state"
+            @click="changeState(index)"
+            class="textEl text-decoration-line-through"
+          >
             {{task.text}}
           </div>
 
