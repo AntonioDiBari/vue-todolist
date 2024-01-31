@@ -34,6 +34,23 @@
   <body>
     <div id="root" class="container text-center my-3">
       <h1>TO DO LIST:</h1>
+      <section class="inputArea">
+        <div class="input-group mb-3">
+          <input
+            v-model.trim="newTask.text"
+            type="text"
+            class="input-text"
+            placeholder="Aggiungi un promemoria"
+          />
+          <button
+            @click="addTask()"
+            class="btn btn-outline-secondary"
+            type="button"
+          >
+            Aggiungi
+          </button>
+        </div>
+      </section>
       <ul>
         <li v-for="(task,index) in tasks" class="toDoEl">
           <div v-if="!task.state" class="textEl">{{task.text}}</div>

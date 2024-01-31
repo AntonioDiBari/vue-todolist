@@ -29,11 +29,24 @@ const app = createApp({
           state: true,
         },
       ],
+      newTask: {
+        text: "",
+        state: false,
+      },
     };
   },
   methods: {
     deleteTask(currentTask) {
       this.tasks.splice(currentTask, 1);
+    },
+    addTask() {
+      if (!this.newTask.text || this.newTask.text.length <= 5) {
+        alert("Inserisci almeno 5 caratteri");
+        return;
+      }
+      const newTaskCopy = { ...this.newTask };
+      this.tasks.push(newTaskCopy);
+      this.newTask.text = "";
     },
   },
   mounted() {},
