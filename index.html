@@ -35,21 +35,15 @@
     <div id="root" class="container text-center my-3">
       <h1>TO DO LIST:</h1>
       <ul>
-        <li class="toDoEl">
-          <div class="textEl">Text 1</div>
-          <span><i class="fa-solid fa-trash"></i></span>
-        </li>
-        <li class="toDoEl">
-          <div class="textEl">Text 1</div>
-          <span><i class="fa-solid fa-trash"></i></span>
-        </li>
-        <li class="toDoEl">
-          <div class="textEl">Text 1</div>
-          <span><i class="fa-solid fa-trash"></i></span>
-        </li>
-        <li class="toDoEl">
-          <div class="textEl">Text 1</div>
-          <span><i class="fa-solid fa-trash"></i></span>
+        <li v-for="(task,index) in tasks" class="toDoEl">
+          <div v-if="!task.state" class="textEl">{{task.text}}</div>
+          <div v-else="task.state" class="textEl text-decoration-line-through">
+            {{task.text}}
+          </div>
+
+          <span
+            ><i @click="deleteTask(index)" class="fa-solid fa-trash"></i
+          ></span>
         </li>
       </ul>
     </div>

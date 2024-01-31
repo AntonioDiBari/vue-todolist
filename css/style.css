@@ -34,3 +34,7 @@ ul {
   flex-grow: 1;
   text-align: start;
 }
+.fa-solid {
+  padding: 5px;
+  cursor: pointer;
+}
