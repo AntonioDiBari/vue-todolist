@@ -1,0 +1,36 @@
+img {
+  max-width: 100%;
+}
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: beige;
+  color: brown;
+}
+
+.toDoEl {
+  width: 300px;
+  background-color: rgb(255, 199, 126);
+  text-decoration: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  border-radius: 15px;
+}
+
+ul {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 15px;
+  padding-left: 0;
+  margin: 1.5rem 0;
+}
+
+.textEl {
+  flex-grow: 1;
+  text-align: start;
+}
